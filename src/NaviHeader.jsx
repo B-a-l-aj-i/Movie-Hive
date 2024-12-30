@@ -96,7 +96,7 @@ function NaviHeader() {
   return (
     <>
     <section
-  className={`bg-gray-900/80 backdrop-blur-md text-yellow-500 px-1 py-4 font-bold rounded-lg shadow-lg max-sm:text-xs max-sm:p-3 ${
+  className={`bg-gray-900/80 backdrop-blur-md text-yellow-500 px-1 py-4 font-bold rounded-lg shadow-lg max-sm:text-s max-sm:top-2 ${
     isFixed ? 'fixed top-0 left-0 right-0 z-20' : 'hidden'
   } w-full md:w-3/4 lg:w-3/4 mx-auto transition-all`}
 >
