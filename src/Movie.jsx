@@ -6,15 +6,31 @@ function Movie({title}){
   let [arr,setArr]=useState({})
 
   const [imageSrc, setImageSrc] = useState(
-    `https://image.tmdb.org/t/p/original${arr.backdrop_path}`
+   ()=>{
+    try{
+      `https://image.tmdb.org/t/p/original${arr.backdrop_path}`
+    }catch(e){
+      console.log(e.message);
+      
+    }
+   }
   );
 
   useEffect(() => {
     const updateImageSrc = () => {
       if (window.innerWidth < 500) {
-        setImageSrc(`https://image.tmdb.org/t/p/original${arr.poster_path}`);
+        try{
+          setImageSrc(`https://image.tmdb.org/t/p/original${arr.poster_path}`)
+        }catch(e){
+          console.log(e.message);  
+        }
       } else {
-        setImageSrc(`https://image.tmdb.org/t/p/original${arr.backdrop_path}`);
+        try{
+         setImageSrc(`https://image.tmdb.org/t/p/original${arr.backdrop_path}`)
+        }catch(e){
+          console.log(e.message);
+          
+        }
       }
     };
 
@@ -28,7 +44,7 @@ function Movie({title}){
     return () => {
       window.removeEventListener("resize", updateImageSrc);
     };
-  }, [arr.backdrop_path, arr.poster_path]);
+  }, [arr]);
 
 
   let URL=`https://api.themoviedb.org/3/search/multi?query=${title}`
@@ -70,7 +86,7 @@ function Movie({title}){
                   <h1 className="text-5xl max-sm:hidden font-extrabold">{arr.original_title || arr.original_name}</h1>
                 </center>
                 <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">{arr.title ||arr.name}</h2>
-                <p className="mt-4 text-gray-300 leading-relaxed">{arr.overview}</p>
+                <p className="mt-4 text-gray-300 leading-relaxed">{arr.overview && arr.overview.slice(0,400)}</p>
 
                 <div className="mt-6 flex gap-4 text-gray-00 text-xs ">
                   <span>⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(2)}</span>
