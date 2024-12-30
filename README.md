@@ -29,7 +29,8 @@ Follow the steps below to get the project up and running locally:
 Clone the repository to your local machine using the following command:
 ```bash
 git clone https://github.com/your-username/movies-search-website.git
-2. Install Dependencies
+
+### 2. **Install Dependencies**
 Navigate to the project directory and install the required dependencies:
 bash
 cd movies-search-website
