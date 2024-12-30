@@ -23,7 +23,6 @@ A movie search website where users can search for movies, add them to their favo
 - **Vite**: Next-generation, fast build tool for modern web development.
 - **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 - **Axios**: Promise-based HTTP client for making API requests.
-- **React Router**: For handling routing and navigation across the app.
 
 ---
 
