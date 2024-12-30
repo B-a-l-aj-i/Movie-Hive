@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import apiReq from './movieList';
-import MovieCard from './Moviecard';
+import MovieCard from './MovieCard';
 
 const Movies = ({url,resetPage,onResetComplete}) => {
   const [movies, setMovies] = useState([]);

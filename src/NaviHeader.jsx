@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Movies from './Movies';
-import MovieCard from './Moviecard';
+import MovieCard from './MovieCard';
 
 
 function NaviHeader() {
