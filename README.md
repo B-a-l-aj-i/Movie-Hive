@@ -30,6 +30,24 @@ Clone the repository to your local machine using the following command:
 ```bash
 git clone https://github.com/your-username/movies-search-website.git.
 
+2. Install Dependencies
+Navigate to the project directory and install the required dependencies:
+
+bash
+Copy code
+cd movies-search-website
+npm install
+3. Create .env File
+To access the movie database API, create a .env file in the root of your project with the following variables:
+
+env
+VITE_API_KEY=your_api_key_here
+You can obtain an API key from The Movie Database (TMDb) API.
+
+4. Run the Project
+To start the development server and view the website in your browser, run:
+
+npm run dev
 
 
 
