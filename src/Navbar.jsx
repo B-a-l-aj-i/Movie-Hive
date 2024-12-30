@@ -39,7 +39,7 @@ function Navbar(){
             <input
                 onClick={handleClick}
                 onChange={(e)=>{handleSearch(e)}}
-                className="bg-transparent border-b-2 border-gray-500 focus:outline-none focus:border-yellow-500 transition-all w-[20vw] max-sm:w-[40vw] text-white placeholder-gray-400"
+                className="bg-transparent border-b-2 border-gray-500 focus:outline-none focus:border-yellow-500 transition-all w-[30vw] max-sm:w-[50vw] text-white placeholder-gray-400"
                 type="text"
                 placeholder="Search for movies, shows, or more"
                 value={input}
