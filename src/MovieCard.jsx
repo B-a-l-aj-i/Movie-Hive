@@ -36,7 +36,7 @@ function MovieCard({movie}){
         />
 
         {/* Hover Overlay */}
-        <div className="p-2 absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="p-2 absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {/* title */}
           <div className="text-white">
             <p className="font-bold w-4/5">{movie.title||movie.original_name}{movie.first_air_date&&"("+movie.first_air_date.slice(0,4)+")"}{movie.release_date&&"("+movie.release_date.slice(0,4)+")"}</p>
@@ -69,9 +69,10 @@ function MovieCard({movie}){
           </button> */}
 
         <p
-          className='text-gray-300 text-xs mb-0'
+          className='p-1 text-gray-100 text-xs absolute bottom-0 translate-y-28 group-hover:-translate-y-[-30%]  transition-transform duration-300 '
         >
-          {movie.overview}
+          {/* <h4 className="text-xl  font-bold" > Overview</h4> */}
+          {movie.overview.slice(0,250)}{movie.overview.length>400 &&"................................."}
         </p>
           
           
