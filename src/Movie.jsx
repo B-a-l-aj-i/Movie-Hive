@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import apiReq from "./movieList";
+import apiReq from "./movieListApi";
 
 function Movie({title}){
 
@@ -26,7 +26,7 @@ function Movie({title}){
         }
       } else {
         try{
-         setImageSrc(`https://image.tmdb.org/t/p/original${arr.backdrop_path}`)
+         setImageSrc(`https://image.tmdb.org/t/p/original${arr.backdrop_path}`);
         }catch(e){
           console.log(e.message);
           
