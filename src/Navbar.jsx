@@ -4,7 +4,7 @@ import Home from "./Home";
 
 function Navbar() {
     let [click, setClick] = useState(false);
-    let arr = ['your fault','petta', 'Breaking Bad']
+    let arr = ['your fault','petta', 'Breaking Bad','Joker']
     function handleClick() {
         setClick(!click)
     }
