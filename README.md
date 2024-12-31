@@ -44,7 +44,7 @@ git clone https://github.com/your-username/movies-search-website.git
 Navigate to the project directory and install the required dependencies:
 
 ```bash
-cd movies-search-website
+cd Movie-Hive
 npm install
 ```
 ---
