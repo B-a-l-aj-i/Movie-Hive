@@ -1,6 +1,6 @@
 # Movies Search Website
 
-A movie search website where users can search for movies, add them to their favorites, and explore different categories like "Now Playing", "All Movies", and "Popular Movies". Built using **Vite**, **React**, and **Tailwind CSS**.
+A movie search website where users can search for movies, add them to their favorites, and explore different categories like "Now Playing", "All Movies", and "Popular Movies". Built using **Vite**, **React**, and **Tailwind CSS**.M
 
 ---
 
