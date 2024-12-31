@@ -43,10 +43,9 @@ function NaviHeader() {
   function handleFavourite() {
     if (!fav) {
       setFav(true);
-      console.log("handing fav");
+      // console.log("handing fav");
       window.scrollTo({ top: 500, behavior: "smooth" });
     } else {
-      console.log(url);
       seturl((prev) => prev);
       setFav(false);
     }

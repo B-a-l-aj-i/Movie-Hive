@@ -29,7 +29,7 @@ const Movies = ({ url}) => {
         }
       });
 
-      console.log(data);
+      // console.log(data);
     }
     a();
   }, [page, url]);
