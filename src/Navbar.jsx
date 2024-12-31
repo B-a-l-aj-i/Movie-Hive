@@ -35,7 +35,7 @@ function Navbar() {
                   onChange={(e) => {
                     handleSearch(e);
                   }}
-                  className="max-sm:text-x bg-transparent border-b-2 border-gray-500 focus:outline-none focus:border-yellow-500 transition-all w-[30vw] max-sm:w-[50vw] text-white placeholder-gray-400"
+                  className="max-sm:text-x font-bold bg-transparent border-b-2 border-yellow-600 focus:outline-none focus:border-yellow-500 transition-all w-[30vw] max-sm:w-[50vw] text-white placeholder-white"
                   type="text"
                   placeholder="Search for movies, shows, or more"
                   value={input}
