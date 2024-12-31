@@ -4,7 +4,7 @@ import Home from "./Home";
 
 function Navbar() {
     let [click, setClick] = useState(false);
-    let arr = ['petta', 'Breaking Bad']
+    let arr = ['your fault','petta', 'Breaking Bad']
     function handleClick() {
         setClick(!click)
     }
@@ -80,7 +80,7 @@ function Navbar() {
         ) : !sub && input.length > 0 ? (
           <Home title={input} />
         ) : (
-          <Home title={arr[0]} />
+          <Home title={arr[ Math.round( Math.random()*(arr.length-1) )  ]} />
         )}
       </>
     );

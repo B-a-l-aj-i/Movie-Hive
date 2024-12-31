@@ -84,11 +84,11 @@ function MovieCardLarge({title}){
                 <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">{arr.title ||arr.name}</h2>
                 <p className="mt-4 text-gray-300 leading-relaxed">{arr.overview && arr.overview.slice(0,400)}</p>
 
-                <div className="mt-6 flex gap-4 text-gray-00 text-xs ">
-                  <span>⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(2)}</span>
+                <div className="mt-6 flex gap-4 text-gray-00 text-xs font-bold">
+                  <span >⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(1)}</span>
                   <span>📅 Release Date: {arr.release_date || arr.first_air_date}</span>
                   <span>🎭 Original Language: {arr.original_language}</span>
-                  <span>🎞 Media Type:{arr.media_type}</span>
+                  <span>🎞 Media Type: {arr.media_type}</span>
 
                 </div>
 
