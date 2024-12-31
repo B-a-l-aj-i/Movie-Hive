@@ -35,7 +35,7 @@ Follow the steps below to get the project up and running locally:
 Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/movies-search-website.git
+git clone https://github.com/B-a-l-aj-i/Movie-Hive.git
 ```
 
 ---
