@@ -3,7 +3,8 @@ import apiReq from "./movieListApi";
 import MovieCardSmall from "./MovieCardSmall";
 
 
-//based on url passed from the NaviHeader;fetching data using aipReq(),and displayed by iterating MovieCardSmall.jsx
+//based on url passed from the NaviHeader all,NowPalying,popular movies,fav
+// ;fetching data using aipReq(),and displayed by iterating MovieCardSmall.jsx
 
 const Movies = ({ url}) => {
   const [movies, setMovies] = useState([]);
