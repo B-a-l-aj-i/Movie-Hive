@@ -62,6 +62,18 @@ function MovieCardLarge({title}){
   function handleFav(m){
     localStorage.setItem(arr.id,JSON.stringify(m));
   }
+  
+    const [isVisible, setIsVisible] = useState(false);
+
+   useEffect(() => {
+     const timer = setTimeout(() => {
+       setIsVisible(true);
+     }, 1000); // Change after 3 seconds
+
+     setIsVisible(false);
+
+     return () => clearTimeout(timer); // Cleanup timer
+   },[title]);
 
     
     return (
@@ -69,13 +81,15 @@ function MovieCardLarge({title}){
           {arr && <div>
             <div >
             <img 
-            className="absolute w-full h-full object-cover max-sm:object-cover z-[-1] opacity-50 bg-gradient-to-r from-black via-gray-800 to-transparent"
+            className={`transition-opacity duration-1000 ${
+                       isVisible ? 'opacity-50' : 'opacity-1'} 
+              absolute w-full h-full object-cover max-sm:object-cover z-[-1]  bg-gradient-to-r from-black via-gray-800 to-transparent`}
              loading="lazy"
              src={imageSrc} 
              /> 
             </div>
              <div className="text-white opacity-1000 font-sans w-[70%]  max-sm:w-[100%] flex items-center  min-h-screen ">
-               <div className=" rounded-lg shadow-lg p-8 max-sm:p-2">
+               <div className=" rounded-lg  p-8 max-sm:p-2">
 
               <div className="w-[100%]">
                 <center>
