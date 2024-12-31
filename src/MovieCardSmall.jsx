@@ -1,6 +1,9 @@
 import { useState} from "react";
 
-function MovieCard({ movie }) {
+
+//small movie card used todisplay multiple movies also handling favourites 
+function MovieCardSmall({ movie }) {
+  // value passed from Movies.jsx
   const [isFav, setIsFav] = useState(() => {
     return localStorage.getItem(movie.id) !== null; // Check if movie is in localStorage
   });
@@ -8,10 +11,8 @@ function MovieCard({ movie }) {
     console.log(movie.title);
     if (localStorage.getItem(movie.id)) {
       localStorage.removeItem(movie.id);
-      // movie.isFav=false;
       setIsFav(false);
     } else {
-      // movie.isFav=true;
       localStorage.setItem(movie.id, JSON.stringify(movie));
       setIsFav(true);
     }
@@ -31,7 +32,7 @@ function MovieCard({ movie }) {
 
       {/* Hover Overlay */}
       <div className="p-2 absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        {/* title */}
+        {/* title and release date */}
         <div className="text-white">
           <p className="font-bold w-4/5">
             {movie.title || movie.original_name}
@@ -39,7 +40,7 @@ function MovieCard({ movie }) {
               "(" + movie.first_air_date.slice(0, 4) + ")"}
             {movie.release_date && "(" + movie.release_date.slice(0, 4) + ")"}
           </p>
-
+          {/* Favourites */}
           <button
             onClick={() => handleFav(movie)}
             className={`absolute top-2 right-2 ${isFav && "text-red-700"} rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
@@ -70,7 +71,7 @@ function MovieCard({ movie }) {
           </svg>
           <span>{movie.vote_average.toFixed(1)}</span>
         </div>
-
+        {/* overview  */}
         <p className="p-1 text-gray-100 text-xs absolute bottom-0 translate-y-28 group-hover:-translate-y-[-30%]  transition-transform duration-300 ">
           {/* <h4 className="text-xl  font-bold" > Overview</h4> */}
           {movie.overview.slice(0, 250)}
@@ -81,4 +82,4 @@ function MovieCard({ movie }) {
   );
 }
 
-export default MovieCard;
+export default MovieCardSmall;

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import apiReq from "./movieListApi";
 
-function Movie({title}){
 
+// large movie component displayed in the home based on the search deafult "petta" 
+function MovieCardLarge({title}){
+  // value passed from navbar.jsx to Home.jsx to Movie.jsx(this-component)
   let [arr,setArr]=useState({})
 
   const [imageSrc, setImageSrc] = useState(
@@ -51,20 +53,14 @@ function Movie({title}){
 
   useEffect(()=>{
    async function a(){
-
       let data=await apiReq(URL);
-      // console.log(data);
-      
        setArr(data[0]);
-
     }a();
   },[title,handleFav])
 
 
   function handleFav(m){
-    console.log(arr);
     localStorage.setItem(arr.id,JSON.stringify(m));
-    
   }
 
     
@@ -88,11 +84,11 @@ function Movie({title}){
                 <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">{arr.title ||arr.name}</h2>
                 <p className="mt-4 text-gray-300 leading-relaxed">{arr.overview && arr.overview.slice(0,400)}</p>
 
-                <div className="mt-6 flex gap-4 text-gray-00 text-xs ">
-                  <span>⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(2)}</span>
+                <div className="mt-6 flex gap-4 text-gray-00 text-xs font-bold">
+                  <span >⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(1)}</span>
                   <span>📅 Release Date: {arr.release_date || arr.first_air_date}</span>
                   <span>🎭 Original Language: {arr.original_language}</span>
-                  <span>🎞 Media Type:{arr.media_type}</span>
+                  <span>🎞 Media Type: {arr.media_type}</span>
 
                 </div>
 
@@ -112,4 +108,4 @@ function Movie({title}){
     )
 }
 
-export default Movie
+export default MovieCardLarge

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import apiReq from "./movieListApi";
-import MovieCard from "./MovieCard";
+import MovieCardSmall from "./MovieCardSmall";
+
+
+//based on url passed from the NaviHeader all,NowPalying,popular movies,fav
+// ;fetching data using aipReq(),and displayed by iterating MovieCardSmall.jsx
 
 const Movies = ({ url}) => {
   const [movies, setMovies] = useState([]);
@@ -25,7 +29,7 @@ const Movies = ({ url}) => {
         }
       });
 
-      console.log(data);
+      // console.log(data);
     }
     a();
   }, [page, url]);
@@ -38,8 +42,9 @@ const Movies = ({ url}) => {
 
   return (
     <div className=" bg-gray-900  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 p-4 py-14">
+      {/* looping arrayof obj(movies) from api call to display movies  */}
       {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+        <MovieCardSmall key={movie.id} movie={movie} />
       ))}
 
       {page < 10 && (
