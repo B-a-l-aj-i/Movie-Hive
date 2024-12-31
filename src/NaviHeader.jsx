@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Movies from "./Movies";
-import MovieCard from "./MovieCardSmall";
-import MovieCardSmall from "./MovieCardLarge";
+import MovieCardSmall from "./MovieCardSmall";
 
 // this component handles functionality like
 // -all
