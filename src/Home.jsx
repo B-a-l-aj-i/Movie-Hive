@@ -3,12 +3,11 @@
 import Movie from "./Movie";
 function Home({title}){
 
-    return(
+    return (
       <>
-      <Movie title={title}/>
+        <Movie title={title} />
       </>
-      
-    )
+    );
 }
 
 export default Home;
