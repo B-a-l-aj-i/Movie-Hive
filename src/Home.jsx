@@ -1,11 +1,14 @@
 
 
-import Movie from "./Movie";
-function Home({title}){
+import MovieCardLarge from "./MovieCardLarge";
 
+
+function Home({title}){
+// value is passed from navbar 
     return (
       <>
-        <Movie title={title} />
+        {/* single large component on hame screen */}
+        <MovieCardLarge title={title} />
       </>
     );
 }

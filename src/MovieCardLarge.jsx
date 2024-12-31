@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import apiReq from "./movieListApi";
 
-function Movie({title}){
 
+// large movie component displayed in the home based on the search deafult "petta" 
+function MovieCardLarge({title}){
+  // value passed from navbar.jsx to Home.jsx to Movie.jsx(this-component)
   let [arr,setArr]=useState({})
 
   const [imageSrc, setImageSrc] = useState(
@@ -51,20 +53,14 @@ function Movie({title}){
 
   useEffect(()=>{
    async function a(){
-
       let data=await apiReq(URL);
-      // console.log(data);
-      
        setArr(data[0]);
-
     }a();
   },[title,handleFav])
 
 
   function handleFav(m){
-    console.log(arr);
     localStorage.setItem(arr.id,JSON.stringify(m));
-    
   }
 
     
@@ -112,4 +108,4 @@ function Movie({title}){
     )
 }
 
-export default Movie
+export default MovieCardLarge

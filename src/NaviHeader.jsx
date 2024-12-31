@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import Movies from "./Movies";
-import MovieCard from "./MovieCard";
+import MovieCard from "./MovieCardSmall";
+import MovieCardSmall from "./MovieCardLarge";
+
+// this component handles functionality like
+// -all
+// -now Playing
+// -popular Movies
+// -favourites
 
 function NaviHeader() {
   const [isFixed, setIsFixed] = useState(false);
@@ -11,7 +18,6 @@ function NaviHeader() {
 
   function handleAll() {
     seturl("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=");
-    setResetPage(resetPage);
     window.scrollTo({ top: 400, behavior: "smooth" });
   }
 
@@ -20,18 +26,15 @@ function NaviHeader() {
     seturl(
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page="
     );
-    setResetPage(true);
   }
 
   function handlePopularMovies() {
     window.scrollTo({ top: 400, behavior: "smooth" });
     seturl("https://api.themoviedb.org/3/movie/popular?language=en-US&page=");
-    setResetPage(true);
   }
 
   function handleTvShows() {
     seturl("https://api.themoviedb.org/3/tv/airing_today?language=ta&page=");
-    setResetPage(true);
     window.scrollTo({ top: 400, behavior: "smooth" });
   }
 
@@ -134,16 +137,16 @@ function NaviHeader() {
         <div className="bg-gray-900 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 p-4">
           {fav &&
             favMovies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCardSmall key={movie.id} movie={movie} />
             ))}
           {fav && favMovies.length == 0 && (
             <p className="text-white font-semibold">No Favourites</p>
           )}
         </div>
       }
-
+      {/* Favourite movies */}
       {fav && <hr></hr>}
-
+      {/* all movies  */}
       <Movies url={url} />
     </>
   );

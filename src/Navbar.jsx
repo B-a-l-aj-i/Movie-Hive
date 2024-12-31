@@ -2,7 +2,6 @@ import {useState } from "react";
 import Home from "./Home";
 
 
-
 function Navbar() {
     let [click, setClick] = useState(false);
     let arr = ['petta', 'Breaking Bad']
@@ -25,7 +24,6 @@ function Navbar() {
     }
     return (
       <>
-        {/* <LoginForm /> */}
         <header className="absolute w-[100%] text-yellow-600 z-40 p-3  sm:p-3 sm:px-3 ">
           <div className="flex justify-between ">
             <p className="text-3xl  font-extrabold sm:text-5xl">MovieHive</p>
@@ -43,7 +41,7 @@ function Navbar() {
                   value={input}
                 />
 
-                {/* Search Button */}
+                {/* Search Button not used as of now */}
                 <button
                   onClick={(e) => {
                     handleSubmit(e);
@@ -55,6 +53,7 @@ function Navbar() {
                 </button>
               </form>
 
+              {/* user name */}
               <p className="flex gap-3 text-white text-x  max-sm:pt-2 pt-4 font-semibold ">
                 Anonymous
                 <svg
@@ -73,6 +72,8 @@ function Navbar() {
             </div>
           </div>
         </header>
+
+        {/* based on the serach text home is displayed in home */}
 
         {sub && input.length > 0 ? (
           <Home title={input} />
