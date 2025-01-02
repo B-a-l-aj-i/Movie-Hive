@@ -105,7 +105,7 @@ function MovieCardLarge({title}){
                   <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">
                     {arr.title || arr.name}
                   </h2>
-                  <p className="mt-4 text-gray-300 leading-relaxed">
+                  <p className="mt-4 text-xs text-gray-300 leading-relaxed">
                     {arr.overview && arr.overview.slice(0, 400)}
                   </p>
 
