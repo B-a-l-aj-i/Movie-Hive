@@ -92,6 +92,7 @@ function MovieCardLarge({title}){
               className={`
                           transition-opacity duration-1000
                         ${isVisible ? "opacity-100 " : "opacity-0"}
+                        max-sm:bg-gradient-to-r from-black via-black/35 to-black/0
                        bg-gradient-to-r from-black via-black/85 to-black/0
                       text-white font-sans w-[70%]  max-sm:w-[100%] flex items-center  min-h-screen`}
             >
@@ -105,7 +106,7 @@ function MovieCardLarge({title}){
                   <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">
                     {arr.title || arr.name}
                   </h2>
-                  <p className="mt-4 text-xs text-gray-300 leading-relaxed">
+                  <p className="mt-4  max-sm:text-xs text-gray-300 leading-relaxed">
                     {arr.overview && arr.overview.slice(0, 400)}
                   </p>
 
