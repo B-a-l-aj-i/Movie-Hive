@@ -92,8 +92,7 @@ function MovieCardLarge({title}){
               className={`
                           transition-opacity duration-1000
                         ${isVisible ? "opacity-100 " : "opacity-0"}
-                        max-sm:bg-gradient-to-r from-black via-black/35 to-black/0
-                       bg-gradient-to-r from-black via-black/85 to-black/0
+                        bg-gradient-to-r from-black via-black/35 to-black/0
                       text-white font-sans w-[70%]  max-sm:w-[100%] flex items-center  min-h-screen`}
             >
               <div className=" rounded-lg  p-8 max-sm:p-2">
