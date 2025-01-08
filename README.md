@@ -52,7 +52,7 @@ npm install
 ### 3. Create .env File
 To access the movie database API, create a .env file in the root of your project with the following variables:
 ```env
-VITE_API_KEY=your_api_key_here
+VITE_API_TOKEN=your_api_key_here
 ```
 ---
 
