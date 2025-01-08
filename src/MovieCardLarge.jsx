@@ -77,49 +77,67 @@ function MovieCardLarge({title}){
 
     
     return (
-        <>
-          {arr && <div>
-            <div >
-            <img 
-            className={`transition-opacity duration-1000 ${
-                       isVisible ? 'opacity-50' : 'opacity-1'} 
-              absolute w-full h-full object-cover max-sm:object-cover z-[-1]  bg-gradient-to-r from-black via-gray-800 to-transparent`}
-             loading="lazy"
-             src={imageSrc} 
-             /> 
+      <>
+        {arr && (
+          <div>
+            <div>
+              <img
+                className={`
+                 absolute w-full h-full object-cover max-sm:object-cover z-[-1] `}
+                loading="lazy"
+                src={imageSrc}
+              />
             </div>
-             <div className="text-white opacity-1000 font-sans w-[70%]  max-sm:w-[100%] flex items-center  min-h-screen ">
-               <div className=" rounded-lg  p-8 max-sm:p-2">
+            <div
+              className={`
+                          transition-opacity duration-1000
+                        ${isVisible ? "opacity-100 " : "opacity-0"}
+                        bg-gradient-to-r from-black via-black/35 to-black/0
+                      text-white font-sans w-[70%]  max-sm:w-[100%] flex items-center  min-h-screen`}
+            >
+              <div className=" rounded-lg  p-8 max-sm:p-2">
+                <div className="w-[100%]">
+                  <center>
+                    <h1 className="text-5xl max-sm:hidden font-extrabold">
+                      {arr.original_title || arr.original_name}
+                    </h1>
+                  </center>
+                  <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">
+                    {arr.title || arr.name}
+                  </h2>
+                  <p className="mt-4  max-sm:text-xs text-gray-300 leading-relaxed">
+                    {arr.overview && arr.overview.slice(0, 400)}
+                  </p>
 
-              <div className="w-[100%]">
-                <center>
-                  <h1 className="text-5xl max-sm:hidden font-extrabold">{arr.original_title || arr.original_name}</h1>
-                </center>
-                <h2 className="text-4xl  max-sm:text-2xl font-bold mt-4">{arr.title ||arr.name}</h2>
-                <p className="mt-4 text-gray-300 leading-relaxed">{arr.overview && arr.overview.slice(0,400)}</p>
+                  <div className="mt-6 flex gap-4 text-gray-00 text-xs font-bold">
+                    <span>
+                      ⭐ Rating:{" "}
+                      {arr.vote_average && arr.vote_average.toFixed(1)}
+                    </span>
+                    <span>
+                      📅 Release Date: {arr.release_date || arr.first_air_date}
+                    </span>
+                    <span>🎭 Original Language: {arr.original_language}</span>
+                    <span>🎞 Media Type: {arr.media_type}</span>
+                  </div>
 
-                <div className="mt-6 flex gap-4 text-gray-00 text-xs font-bold">
-                  <span >⭐ Rating: {arr.vote_average && arr.vote_average.toFixed(1)}</span>
-                  <span>📅 Release Date: {arr.release_date || arr.first_air_date}</span>
-                  <span>🎭 Original Language: {arr.original_language}</span>
-                  <span>🎞 Media Type: {arr.media_type}</span>
-
-                </div>
-
-                <div className="mt-6">
-                  <button 
-                  onClick={()=>{handleFav(arr)}}
-                  className= {`px-6 max-sm:px-2 max-sm:py-1 max-sm:text-base py-3 bg-red-600 ${localStorage.getItem(arr.id)?'cursor-not-allowed':'cursor-pointer hover:bg-red-500'}  rounded-lg text-lg font-semibold transition-all`}>
-                   {localStorage.getItem(arr.id) ? 'In Fav' : 'Add to Fav'} 
-                  </button>
+                  <div className="mt-6">
+                    <button
+                      onClick={() => {
+                        handleFav(arr);
+                      }}
+                      className={`px-6 max-sm:px-2 max-sm:py-1 max-sm:text-base py-3 bg-red-600 ${localStorage.getItem(arr.id) ? "cursor-not-allowed" : "cursor-pointer hover:bg-red-500"}  rounded-lg text-lg font-semibold transition-all`}
+                    >
+                      {localStorage.getItem(arr.id) ? "In Fav" : "Add to Fav"}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-}
-        </>
-    )
+        )}
+      </>
+    );
 }
 
 export default MovieCardLarge

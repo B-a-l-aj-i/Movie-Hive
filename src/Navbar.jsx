@@ -26,7 +26,7 @@ function Navbar() {
       <>
         <header className="absolute w-[100%] text-yellow-600 z-40 p-3  sm:p-3 sm:px-3 ">
           <div className="flex justify-between ">
-            <p className="text-3xl  font-extrabold sm:text-5xl">MovieHive</p>
+            <p className="text-5xl max-md:text-3xl max-sm:text-xl  font-extrabold ">MovieHive</p>
             <div className="flex items-center gap-6 max-sm:flex-col-reverse max-sm:gap-0  max-sm:justify-between">
               <form className="flex gap-4 bg-transparent rounded-lg shadow-md">
                 {/* Input Field */}
@@ -35,9 +35,12 @@ function Navbar() {
                   onChange={(e) => {
                     handleSearch(e);
                   }}
-                  className="max-sm:text-x bg-transparent border-b-2 border-gray-500 focus:outline-none focus:border-yellow-500 transition-all w-[30vw] max-sm:w-[50vw] text-white placeholder-gray-400"
+                  className="max-sm:text-x pt-2 font-bold bg-transparent border-b-2
+                   border-yellow-600 focus:outline-none focus:border-yellow-500 
+                   transition-all w-[30vw] max-sm:w-[35vw]  text-white placeholder-white 
+                   max-sm:placeholder:text-xs"
                   type="text"
-                  placeholder="Search for movies, shows, or more"
+                  placeholder="Search for movies,shows and more"
                   value={input}
                 />
 
@@ -54,7 +57,7 @@ function Navbar() {
               </form>
 
               {/* user name */}
-              <p className="flex gap-3 text-white text-x  max-sm:pt-2 pt-4 font-semibold ">
+              <p className="flex gap-3 justify-evenly text-white text-x  max-sm:pt-0  pt-4 font-semibold ">
                 Anonymous
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
