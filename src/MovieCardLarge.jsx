@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import apiReq from "./movieListApi";
+import { debounce } from "lodash";
+
 
 
 // large movie component displayed in the home based on the search deafult "petta" 
@@ -51,12 +53,19 @@ function MovieCardLarge({title}){
 
   let URL=`https://api.themoviedb.org/3/search/multi?query=${title}`
 
-  useEffect(()=>{
-   async function a(){
-      let data=await apiReq(URL);
-       setArr(data[0]);
-    }a();
-  },[title])
+  const debouncedFetchData = debounce(async () => {
+    let data = await apiReq(URL);
+    setArr(data[0]);
+  }, 500); // Adjust debounce delay (in milliseconds)
+
+  useEffect(() => {
+    debouncedFetchData(); // Call the debounced function
+    // Cleanup the debounce function on component unmount or title change
+    return () => {
+      debouncedFetchData.cancel();
+    };
+  }, [title]); // Trigger effect on title change
+
 
 
   function handleFav(m){
