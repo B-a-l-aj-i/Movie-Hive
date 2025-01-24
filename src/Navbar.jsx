@@ -83,7 +83,7 @@ function Navbar() {
         ) : !sub && input.length > 0 ? (
           <Home title={input} />
         ) : (
-          <Home title={arr[ 0 ]} />
+          <Home title={arr[ Math.round( Math.random()*(arr.length-1) )  ]} />
         )}
       </>
     );
