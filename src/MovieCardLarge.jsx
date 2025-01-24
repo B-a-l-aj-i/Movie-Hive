@@ -56,7 +56,7 @@ function MovieCardLarge({title}){
       let data=await apiReq(URL);
        setArr(data[0]);
     }a();
-  },[title,handleFav])
+  },[title])
 
 
   function handleFav(m){
