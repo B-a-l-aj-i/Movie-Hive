@@ -56,7 +56,7 @@ function MovieCardLarge({title}){
   const debouncedFetchData = debounce(async () => {
     let data = await apiReq(URL);
     setArr(data[0]);
-  }, 5000); // Adjust debounce delay (in milliseconds)
+  }, 1000); // Adjust debounce delay (in milliseconds)
 
   useEffect(() => {
     debouncedFetchData(); // Call the debounced function
